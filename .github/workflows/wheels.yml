@@ -67,7 +67,7 @@ jobs:
           python3 -m pip install -r requirements.txt -r requirements-dev.txt
           maturin build --release --strip
           maturin build --release --strip --universal2
-          python3 -m pip install kmedoids --no-index --find-links target/wheels
+          python3 -m pip install kmedoids-debug --no-index --find-links target/wheels
           cd tests && python3 -m unittest discover && cd ..
       - uses: actions/upload-artifact@v3
         with:
@@ -94,7 +94,7 @@ jobs:
           rustup target add 
           python -m pip install -r requirements.txt -r requirements-dev.txt
           maturin build --release --strip
-          python -m pip install kmedoids --no-index --find-links target/wheels
+          python -m pip install kmedoids-debug --no-index --find-links target/wheels
           cd tests && python -m unittest discover && cd ..
       - uses: actions/upload-artifact@v3
         with:

@@ -18,6 +18,6 @@ done
 
 # test wheels
 for PYBIN in /opt/python/cp3[891]*/bin; do
-    "${PYBIN}/pip" install kmedoids --no-index --find-links wheelhouse
+    "${PYBIN}/pip" install kmedoids-debug --no-index --find-links wheelhouse
     cd tests && "${PYBIN}/python" -m unittest discover && cd ..
 done
